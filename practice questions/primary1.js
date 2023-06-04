@@ -3,18 +3,23 @@
 
 function mySort(arr){
    let workingIndex = arr.length-1;
-    while(workingIndex <=0 ){
+    while(workingIndex >=0 ){
         let biggest = arr[0];
         let biggestIndex = 0;
-        for(let i=0;i<arr.length;i++){
-            if(arr[i]> biggest){
+        for(let i=0;i<=workingIndex;i++){
+            if(arr[i]> biggest){ 
                 biggest = arr[i];
                 biggestIndex = i;
             }
         }
+        let temp = arr[biggestIndex];
+        arr[biggestIndex] = arr[workingIndex];
+        arr[workingIndex] = temp
         workingIndex --;
-    }
+        
+    }   
     console.log(arr);
 }
+    
 
-mySort([17, 0, -3, 2, 1, 0.5]);
+mySort([17, 0, -3, 2, 1, 0.5,10,99,5]);
